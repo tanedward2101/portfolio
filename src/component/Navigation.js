@@ -5,14 +5,22 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
+import Image from 'react-bootstrap/Image'
+import logo from "./logo2.svg"
 
 function Navigation() {
   return (
     <>
-      {[ 'sm'].map((expand) => (
-        <Navbar key={expand} bg="white" expand={expand} className="mb-3">
+      {['sm'].map((expand) => (
+        <Navbar key={expand} bg="none" expand={expand} className="mb-3">
           <Container fluid>
-            <Navbar.Brand href="#">Navbar Offcanvas</Navbar.Brand>
+            <Navbar.Brand href="#">
+              <img src={logo}
+              width="80"
+              height="50"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"/>
+              </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}
@@ -25,7 +33,7 @@ function Navigation() {
                 </Offcanvas.Title>
               </Offcanvas.Header>
               <Offcanvas.Body>
-                <Nav className="justify-content-end flex-grow-1 pe-3">
+                <Nav className="justify-content-end align-items-start flex-grow-1 pe-3">
                   <Nav.Link href="#action1">Home</Nav.Link>
                   <Nav.Link href="#action2">Link</Nav.Link>
                   <NavDropdown
@@ -42,7 +50,7 @@ function Navigation() {
                     </NavDropdown.Item>
                   </NavDropdown>
                 </Nav>
-                <Form className="d-flex">
+                {/* <Form className="d-flex">
                   <Form.Control
                     type="search"
                     placeholder="Search"
@@ -50,7 +58,7 @@ function Navigation() {
                     aria-label="Search"
                   />
                   <Button variant="outline-success">Search</Button>
-                </Form>
+                </Form> */}
               </Offcanvas.Body>
             </Navbar.Offcanvas>
           </Container>

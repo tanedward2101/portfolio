@@ -12,6 +12,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+.background{
+  z-index: -10;
+}
+
+.main-logo{
+  width: 100%;
+ 
+ 
+  /* */
+}
+
+.main-img{
+  width: 50%;
+  margin-top:10%;
+  animation-name: vanishing;
+  animation-duration: 4s;
+  opacity: 0;
+}
 
 .App-header {
   background-color: #ffffff;
@@ -35,4 +53,13 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+@keyframes vanishing {
+  0%   {opacity: 0.5;}
+  25%  {opacity: 1;}
+  50%  {opacity: 1;}
+  70%  {opacity: 1; width: 40%;}
+  80%  {opacity: 0.8;}
+  100% {opacity: 0; display: none;}
 }
