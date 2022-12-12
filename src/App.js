@@ -23,10 +23,13 @@ const particlesLoaded = useCallback(async container => {
     <div className="App">
       
      
-      <Background/>
+      {/* <Background/> */}
       <Navigation />
       <div className="main-logo">
       <img src={logo} className="main-img" />
+      </div>
+      <div className="main-text">
+        Hi, I'm Edward, a Full-stack web developer. 
       </div>
     </div>
   );

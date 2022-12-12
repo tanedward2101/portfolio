@@ -1,3 +1,11 @@
+@font-face {
+  font-family: Futura;
+  src: url(./font/futur.ttf);
+}
+@font-face {
+  font-family: Ubuntu;
+  src: url(./font/Ubuntu-Regular.ttf);
+}
 .App {
   text-align: center;
 }
@@ -16,11 +24,16 @@
   z-index: -10;
 }
 
-.main-logo{
-  width: 100%;
- 
- 
-  /* */
+.main-text{
+  font-size: 54px;
+  font-weight: bold;
+  font-family: 'Ubuntu';
+  color: rgb(148, 148, 148);
+  animation: appearing 4s ;
+  margin-top:10%;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  animation-delay: 4.5s;
 }
 
 .main-img{
@@ -28,7 +41,19 @@
   margin-top:10%;
   animation-name: vanishing;
   animation-duration: 4s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
   opacity: 0;
+  height: 0;
+
+}
+.main-logo{
+  animation-name: disappear;
+  animation-duration: 4s;
+  animation-fill-mode: forwards;
+  height: 0;
+  animation-delay: 0.5s;
+  display: block;
 }
 
 .App-header {
@@ -55,11 +80,32 @@
   }
 }
 
+@keyframes appearing{
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
 @keyframes vanishing {
-  0%   {opacity: 0.5;}
+  0%   {opacity: 0; height: 50%;}
   25%  {opacity: 1;}
   50%  {opacity: 1;}
   70%  {opacity: 1; width: 40%;}
-  80%  {opacity: 0.8;}
-  100% {opacity: 0; display: none;}
+  80%  {opacity: 0.8; height: 50%;}
+  99%  {width:50%}
+  100% {opacity: 0; height: 0px; display: none; width: 0;}
+}
+
+@keyframes disappear {
+  0%{
+    height: 50%;
+  }
+  99%{
+    height: 50%;
+    width:100%;
+  }
+  100%{
+    display: none;
+    height: 0px;
+    width: 0px;
+  }
 }
