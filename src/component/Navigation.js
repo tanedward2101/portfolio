@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
 import Image from 'react-bootstrap/Image'
-import logo from "./logo2.svg"
+import logo from "../img/logo2.svg"
 
 function Navigation() {
   return (
