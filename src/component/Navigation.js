@@ -1,11 +1,8 @@
-import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import Offcanvas from 'react-bootstrap/Offcanvas';
-import Image from 'react-bootstrap/Image'
 import logo from "../img/logo2.svg"
 
 function Navigation() {
@@ -16,11 +13,11 @@ function Navigation() {
           <Container fluid>
             <Navbar.Brand href="#">
               <img src={logo}
-              width="80"
-              height="50"
-              className="d-inline-block align-top"
-              alt="React Bootstrap logo"/>
-              </Navbar.Brand>
+                width="80"
+                height="50"
+                className="d-inline-block align-top"
+                alt="React Bootstrap logo" />
+            </Navbar.Brand>
             <Navbar.Toggle aria-controls={`offcanvasNavbar-expand-${expand}`} />
             <Navbar.Offcanvas
               id={`offcanvasNavbar-expand-${expand}`}

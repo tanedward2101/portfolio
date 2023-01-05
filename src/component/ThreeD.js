@@ -2,19 +2,25 @@
 import { useEffect } from 'react';
 import SceneInit from './lib/SceneInit';
 import * as THREE from 'three';
-import { Mesh } from 'three';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+
 function ThreeD() {
     // Scene
-
-
+  
+    
     useEffect(() => {
         const test = new SceneInit('myThreeJsCanvas');
+        
         test.initialize();
         test.animate();
-        const helper = new THREE.AxesHelper(5);
+        const helper = new THREE.AxesHelper(5); //HELPER LINE
         test.scene.add(helper)
+
+
         const group1 = new THREE.Group();
         test.scene.add(group1);
+
+
         const cube1 = new THREE.Mesh(
             new THREE.BoxGeometry(1, 1, 1),
             new THREE.MeshBasicMaterial({ color: 0xff0000 })
@@ -36,8 +42,8 @@ function ThreeD() {
         const tick = () => {
             const elapsedTime = clock.getElapsedTime()
 
-            boxMesh.position.y += Math.cos(elapsedTime )/30
-            boxMesh.position.x += Math.sin(elapsedTime )/30
+            // boxMesh.position.y += Math.cos(elapsedTime )/30
+            // boxMesh.position.x += Math.sin(elapsedTime )/30
 
             window.requestAnimationFrame(tick)
         }

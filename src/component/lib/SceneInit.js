@@ -1,7 +1,7 @@
 
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
-import Stats from 'three/examples/jsm/libs/stats.module';
+
 
 export default class SceneInit {
     constructor(canvasId) {
@@ -29,7 +29,7 @@ export default class SceneInit {
 
     initialize() {
         this.scene = new THREE.Scene();
-        this.scene.background = new THREE.Color('#ffffff');
+        this.scene.background = new THREE.Color('#000000');
         this.camera = new THREE.PerspectiveCamera(
             this.fov,
             this.width / this.height,
@@ -45,12 +45,15 @@ export default class SceneInit {
             antialias: true,
         });
         this.renderer.setSize(this.width, this.height);
+      //  this.renderer.setPixelRatio(window.devicePixelRatio);
+        this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
         // this.renderer.shadowMap.enabled = true;
         document.body.appendChild(this.renderer.domElement);
 
         this.clock = new THREE.Clock();
         this.controls = new OrbitControls(this.camera, this.renderer.domElement);
-       // this.controls.enableZoom = false;
+        // this.controls.enabled = false;
+        // this.controls.enableZoom = false;
         // this.stats = Stats();
 
         // document.body.appendChild(this.stats.dom);
@@ -86,7 +89,7 @@ export default class SceneInit {
         // requestAnimationFrame(this.animate.bind(this));
         window.requestAnimationFrame(this.animate.bind(this));
         this.render();
-    
+
         this.controls.update();
     }
 
